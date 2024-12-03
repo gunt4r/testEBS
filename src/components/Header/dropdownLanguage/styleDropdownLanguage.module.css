@@ -1,0 +1,17 @@
+.section-language__dropdown {
+  border-radius: 10px;
+  font-size: 17.6px;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+}
+.section-language__dropdown-content {
+  border: 1px solid #1d1b1b;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+}
+.section-language__dropdown-content-line:hover {
+  transition: 0.3s ease-in-out;
+  background-color: #1d1b1b;
+  color: #f5f5f5;
+  border-radius: 10px;
+}
