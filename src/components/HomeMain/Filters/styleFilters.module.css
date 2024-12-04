@@ -1,0 +1,40 @@
+.section-product__filter {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 50px;
+  text-align: left;
+  color: #1e1e1e;
+}
+.section-product__line {
+  background-color: #1e1e1e;
+  height: 1.5px;
+  width: 100%;
+}
+.section-product__filter-subtitle {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 50px;
+  text-align: left;
+  color: #1e1e1e;
+}
+.section-product__filter-options {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.section-product__filter-option {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 50px;
+  color: #1e1e1e;
+}
+.section-product__filter-option-active {
+    border: 1px solid #1e1e1e;
+    border-radius: 10px;
+}

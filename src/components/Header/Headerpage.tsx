@@ -132,7 +132,7 @@ function Header() {
           <li className={classNames(style['section-nav__menu-item'])}>
             <Link
               className={classNames(style['section-nav__menu-item-link'])}
-              to="/"
+              to="/cart"
             >
               {' '}
               <MdShoppingCart
@@ -173,7 +173,7 @@ function Header() {
 
                   return (
                     <Link to={`/products/${id}`}>
-                    <li>
+                    <li className={classNames(style['section-nav__search-list-item'])}>
                       <img alt="" src={image} />{" "}
                       <div
                         className={classNames(

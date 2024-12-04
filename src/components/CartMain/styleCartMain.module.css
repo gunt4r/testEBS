@@ -1,0 +1,22 @@
+.section-cart {
+  background-color: #fdfeff;
+}
+.section-cart__wrapper {
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  padding-top: 5rem;
+}
+.section-cart__wrapper-title {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 64px;
+  line-height: 148%;
+  text-transform: uppercase;
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 2rem;
+}

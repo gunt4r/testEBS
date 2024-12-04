@@ -1,30 +1,21 @@
-import React from 'react';
+import style from "./stylePagination.module.css"
 
 interface PaginationProps {
-  totalProducts: number;
-  productsPerPage: number;
   currentPage: number;
-  setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
+  totalPages: number;
+  setPage: (page: number) => void;
 }
 
-const Pagination: React.FC<PaginationProps> = ({
-  totalProducts,
-  productsPerPage,
-  currentPage,
-  setCurrentPage,
-}) => {
-  const pageNumbers = Array.from(
-    { length: Math.ceil(totalProducts / productsPerPage) },
-    (_, i) => i + 1
-  );
+const Pagination = ({ currentPage, totalPages, setPage }: PaginationProps) => {
+  const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
 
   return (
-    <div className="pagination">
+    <div className={style["section-product__pagination"]}>
       {pageNumbers.map((number) => (
         <button
           key={number}
-          onClick={() => setCurrentPage(number)}
-          className={number === currentPage ? 'active' : ''}
+          onClick={() => setPage(number)}
+          className={`${number === currentPage ? `${style["section-product__pagination-active"]}` : ""} ${style['section-product__pagination-item']}`}
         >
           {number}
         </button>

@@ -1,23 +1,34 @@
-import React from 'react';
+import { useState } from "react";
+import style from "./styleSorting.module.css"
+import classNames from "classnames";
+type SortingProps = {
+  sortProducts: (option: string) => void;
+};
 
-interface SortingProps {
-  sortOption: string;
-  handleSorting: (option: string) => void;
-}
+const Sorting = ({ sortProducts }: SortingProps) => {
+  const [selectedOption, setSelectedOption] = useState<string>('Sort by');
 
-const Sorting: React.FC<SortingProps> = ({ sortOption, handleSorting }) => {
+  const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const value = event.target.value;
+    setSelectedOption(value);
+    sortProducts(value);
+  };
+
   return (
-    <div>
-      <h4>Sort by:</h4>
-      <select
-        value={sortOption}
-        onChange={(e) => handleSorting(e.target.value)}
-      >
-        <option value="bestseller">Bestseller</option>
-        <option value="price-asc">Price: Low to High</option>
-        <option value="price-desc">Price: High to Low</option>
-      </select>
-    </div>
+    <div className={style['section-products__sort-container']}>
+    <label htmlFor="sortingDropdown" className={style['section-products__sort-label']}>
+      Sort by:
+    </label>
+    <select
+      value={selectedOption}
+      onChange={handleSelectChange}
+      className={style['section-products__sort-dropdown']}
+    >
+      <option value="price-asc">Low to High</option>
+      <option value="price-desc">High to Low</option>
+      <option value="rating">Rating</option>
+    </select>
+  </div>
   );
 };
 

@@ -1,0 +1,29 @@
+.section-products__sort-container {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.section-products__sort-label {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 50px;
+  color: #1e1e1e;
+  margin-right: 10px;
+}
+
+.section-products__sort-dropdown {
+  padding: 10px 15px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.section-products__sort-dropdown:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 3px rgba(0, 123, 255, 0.5);
+}

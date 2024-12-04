@@ -1,0 +1,33 @@
+.section-product {
+  width: 90%;
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  align-items: center;
+  justify-content: space-between;
+}
+.section-product__wrapper {
+  background-color: #fdfeff;
+  padding-bottom: 5rem;
+}
+.section-product__right-wrapper {
+  width: 80%;
+}
+.section-product__right-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.section-product__right-header-length {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 50px;
+  color: #1e1e1e;
+}
+.section-product__cards {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
+  gap: 20px !important;
+}

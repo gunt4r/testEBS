@@ -1,89 +1,95 @@
-import React from 'react';
+import { useState } from 'react';
+import style from './styleFilters.module.css';
+import classNames from 'classnames';
+type FiltersProps = {
+  setCategory: (category: string) => void;
+  setPriceRange: (range: [number, number]) => void;
+};
 
-interface FiltersProps {
-  filters: {
-    category: string[];
-    price: [number, number][];
-  };
-  setFilters: React.Dispatch<
-    React.SetStateAction<{
-      category: string[];
-      price: [number, number][];
-    }>
-  >;
-}
+const Filters = ({ setCategory, setPriceRange }: FiltersProps) => {
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  const [activePriceRange, setActivePriceRange] = useState<
+    [number, number] | null
+  >(null);
 
-const Filters: React.FC<FiltersProps> = ({ filters, setFilters }) => {
-  const handleCategoryChange = (category: string) => {
-    const updatedCategories = filters.category.includes(category)
-      ? filters.category.filter((cat) => cat !== category)
-      : [...filters.category, category];
-    setFilters({ ...filters, category: updatedCategories });
+  const handleCategoryClick = (category: string) => {
+    setActiveCategory(category);
+    setCategory(category);
   };
 
-  const handlePriceChange = (priceRange: [number, number]) => {
-    const updatedPrices = filters.price.includes(priceRange)
-      ? filters.price.filter((range) => range !== priceRange)
-      : [...filters.price, priceRange];
-    setFilters({ ...filters, price: updatedPrices });
+  const handlePriceClick = (range: [number, number]) => {
+    setActivePriceRange(range);
+    setPriceRange(range);
   };
-
   return (
     <div>
-      <h3>Filter by</h3>
-      <div>
-        <h4>Category</h4>
-        <div>
-          <label>
-            <input
-              type="checkbox"
-              onChange={() => handleCategoryChange("men's clothing")}
-            />
-            Men's Clothing
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              onChange={() => handleCategoryChange("women's clothing")}
-            />
-            Women's Clothing
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              onChange={() => handleCategoryChange('jewelery')}
-            />
-            Jewelry
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              onChange={() => handleCategoryChange('electronics')}
-            />
-            Electronics
-          </label>
-        </div>
+      <h3 className={classNames(style['section-product__filter'])}>
+        Filter by{' '}
+      </h3>
+      <hr className={classNames(style['section-product__line'])} />
+      <h3 className={classNames(style['section-product__filter-subtitle'])}>
+        Collection
+      </h3>
+      <div className={classNames(style['section-product__filter-options'])}>
+        <button
+          className={classNames(style['section-product__filter-option'], {
+            [style['section-product__filter-option-active']]:
+              activeCategory === "men's clothing",
+          })}
+          onClick={() => handleCategoryClick("men's clothing")}
+        >
+          Men's Clothing
+        </button>
+        <button
+          className={classNames(style['section-product__filter-option'], {
+            [style['section-product__filter-option-active']]:
+              activeCategory === "women's clothing",
+          })}
+          onClick={() => handleCategoryClick("women's clothing")}
+        >
+          Women's Clothing
+        </button>
+        <button
+          className={classNames(style['section-product__filter-option'], {
+            [style['section-product__filter-option-active']]:
+              activeCategory === 'jewelery',
+          })}
+          onClick={() => handleCategoryClick('jewelery')}
+        >
+          Jewelry
+        </button>
+        <button
+          className={classNames(style['section-product__filter-option'], {
+            [style['section-product__filter-option-active']]:
+              activeCategory === 'electronics',
+          })}
+          onClick={() => handleCategoryClick('electronics')}
+        >
+          Electronics
+        </button>
       </div>
-      <div>
-        <h4>Price</h4>
-        <div>
-          <label>
-            <input type="checkbox" onChange={() => handlePriceChange([0, 25])} />
-            Under $25
-          </label>
-          <label>
-            <input type="checkbox" onChange={() => handlePriceChange([25, 50])} />
-            $25 - $50
-          </label>
-          <label>
-            <input type="checkbox" onChange={() => handlePriceChange([50, 100])} />
-            $50 - $100
-          </label>
-          <label>
-            <input type="checkbox" onChange={() => handlePriceChange([100, 150])} />
-            $100 - $150
-          </label>
-        </div>
+      <h3 className={classNames(style['section-product__filter-subtitle'])}>
+        Filter by Price
+      </h3>
+      <div className={classNames(style['section-product__filter-options'])}>
+      <button
+        className={classNames(
+          style['section-product__filter-option'],
+          { [style['section-product__filter-option-active']]: activePriceRange?.[0] === 0 && activePriceRange?.[1] === 25 }
+        )}
+        onClick={() => handlePriceClick([0, 25])}
+      >
+        $0 - $25
+      </button>
+      <button
+        className={classNames(
+          style['section-product__filter-option'],
+          { [style['section-product__filter-option-active']]: activePriceRange?.[0] === 25 && activePriceRange?.[1] === 50 }
+        )}
+        onClick={() => handlePriceClick([25, 50])}
+      >
+        $25 - $50
+      </button>
       </div>
     </div>
   );

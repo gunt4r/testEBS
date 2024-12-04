@@ -1,0 +1,24 @@
+.section-product__pagination {
+  display: flex;
+  width: fit-content;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 2rem;
+  justify-content: center;
+  flex-direction: row;
+}
+.section-product__pagination-active {
+  border: 1px solid #1e1e1e;
+  border-radius: 5px;
+  padding: 6px;
+  margin-right: 10px;
+}
+.section-product__pagination-item {
+  margin-right: 10px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 120%;
+  color: #393939;
+}
