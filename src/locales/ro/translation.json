@@ -3,5 +3,10 @@
     "login" : "Logare",
     "cart" : "Coș",
     "becomeSeller" : "Deveniți Vânzător",
-    "products" : "produse"
+    "products" : "produse",
+    "clearCart": "Golează coșul",
+    "delete": "Șterge",
+    "quantity": "Cantitatea",
+    "moveToFavorite": "Mută spre favorite"
+
 }

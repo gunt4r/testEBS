@@ -3,6 +3,9 @@
     "login" : "Войти",
     "cart" : "Корзина",
     "becomeSeller" : "Станьте Продавцом",
-    "products" : "продуктов"
-
+    "products" : "продуктов",
+    "clearCart": "Очистить корзину",
+    "delete": "Удалить",
+    "quantity": "Количество",
+    "moveToFavorite": "К избранным"
 }

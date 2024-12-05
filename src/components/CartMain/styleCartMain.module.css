@@ -7,6 +7,13 @@
   margin-left: auto;
   display: flex;
   padding-top: 5rem;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+.section-cart__wrappers {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .section-cart__wrapper-title {
   font-family: 'Poppins';
@@ -19,4 +26,50 @@
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 2rem;
+}
+.section-cart__wrapper-clear {
+  color: #fdfeff;
+  background-color: #1e1e1e;
+  padding: 15px 25px;
+  font-family: 'Poppins';
+  font-style: normal;
+  width: 200px;
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.section-cart__checkout {
+  box-sizing: border-box;
+  background: #f7f7f7;
+  border: 1px solid rgba(241, 241, 241, 0.2);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.11);
+  border-radius: 5px;
+  padding: 40px 60px;
+  width: 40%;
+}
+.section-cart__checkout-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 2rem;
+}
+.section-cart__checkout-title {
+  font-family: 'Ablation';
+  font-style: normal;
+  font-weight: 100;
+  font-size: 32px;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: #000000;
+}
+.section-cart__checkout-subtitle {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 127%;
+  color: rgba(79, 79, 79, 0.8);
 }

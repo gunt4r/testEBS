@@ -3,5 +3,9 @@
     "login" : "Login",
     "cart" : "Cart",
     "becomeSeller" : "Become a Seller",
-    "products" : "products"
+    "products" : "products",
+    "clearCart": "Clear cart",
+    "delete": "Delete",
+    "quantity": "Quantity",
+    "moveToFavorite": "Move to favorite"
 }

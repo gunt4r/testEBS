@@ -65,10 +65,13 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
       return state;
   }
 };
-
+const getTotalPrice = (items: CartItem[]) => {
+  return items.reduce((total, item) => total + item.price * item.quantity, 0);
+};
 interface CartContextProps {
   state: CartState;
   dispatch: React.Dispatch<CartAction>;
+  getTotalPrice: (items: CartItem[]) => number;
 }
 
 const CartContext = createContext<CartContextProps | undefined>(undefined);
@@ -79,7 +82,7 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
   const [state, dispatch] = useReducer(cartReducer, initialState);
 
   return (
-    <CartContext.Provider value={{ state, dispatch }}>
+    <CartContext.Provider value={{ state, dispatch,getTotalPrice}}>
       {children}
     </CartContext.Provider>
   );
