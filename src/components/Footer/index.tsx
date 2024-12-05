@@ -3,7 +3,9 @@ import style from './styleFooter.module.css';
 import classNames from 'classnames';
 import { FaFacebookF } from 'react-icons/fa6';
 import { FaInstagram } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
 export default function Footer() {
+  const { t } = useTranslation()
   return (
     <section className={classNames(style['section-footer'])}>
       <div className={classNames(style['section-footer__content'])}>
@@ -19,22 +21,22 @@ export default function Footer() {
           <li
             className={classNames(style['section-footer__content-list-item'])}
           >
-            About
+            {t("about")}
           </li>
           <li
             className={classNames(style['section-footer__content-list-item'])}
           >
-            Group Companies
+            {t('groupCompanies')}
           </li>
           <li
             className={classNames(style['section-footer__content-list-item'])}
           >
-            Help
+            {t('help')}
           </li>
           <li
             className={classNames(style['section-footer__content-list-item'])}
           >
-            Consumer Policy
+            {t('consumerPolicy')}
           </li>
         </ul>
         <div className={classNames(style['section-footer__content-socials'])}>

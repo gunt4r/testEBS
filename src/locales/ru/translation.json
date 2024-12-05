@@ -7,5 +7,14 @@
     "clearCart": "Очистить корзину",
     "delete": "Удалить",
     "quantity": "Количество",
-    "moveToFavorite": "К избранным"
+    "moveToFavorite": "К избранным",
+    "addToCart": "добавлен в корзину",
+    "sortBy":"Сортировать",
+    "about" : "О нас",
+    "help" : "Помощь",
+    "consumerPolicy":"Потребительская политика",
+    "groupCompanies":"Группы компаний"
+
+
+
 }

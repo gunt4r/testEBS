@@ -3,6 +3,8 @@ import classNames from 'classnames';
 import { IoCartOutline } from 'react-icons/io5';
 import { FaStar } from 'react-icons/fa6';
 import { useCart } from '../../context/CartContext';
+import toast, { Toaster } from "react-hot-toast";
+import { useTranslation } from 'react-i18next';
 interface Product {
   id: string;
   title: string;
@@ -16,6 +18,7 @@ interface CardProductProps {
   product: Product;
 }
 export default function CardProduct({ product }: CardProductProps) {
+  const { t } = useTranslation()
   const { dispatch } = useCart();
 
   const handleAddToCart = () => {
@@ -25,6 +28,7 @@ export default function CardProduct({ product }: CardProductProps) {
         ...product, quantity: 1,
       },
     });
+    toast.success(`${product.title} ${t("addToCart")}`);
   };
   return (
     <div
@@ -32,6 +36,7 @@ export default function CardProduct({ product }: CardProductProps) {
       key={product.id}
       
     >
+      <Toaster position="bottom-right" />
       <img
         className={classNames(style['section-product__card-image'])}
         src={product.image}

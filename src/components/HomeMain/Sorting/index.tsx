@@ -1,11 +1,12 @@
 import { useState } from "react";
 import style from "./styleSorting.module.css"
-import classNames from "classnames";
+import { useTranslation } from "react-i18next";
 type SortingProps = {
   sortProducts: (option: string) => void;
 };
 
 const Sorting = ({ sortProducts }: SortingProps) => {
+  const { t } = useTranslation()
   const [selectedOption, setSelectedOption] = useState<string>('Sort by');
 
   const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -17,7 +18,7 @@ const Sorting = ({ sortProducts }: SortingProps) => {
   return (
     <div className={style['section-products__sort-container']}>
     <label htmlFor="sortingDropdown" className={style['section-products__sort-label']}>
-      Sort by:
+      {t('sortBy')}
     </label>
     <select
       value={selectedOption}

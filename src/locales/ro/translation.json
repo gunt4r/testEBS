@@ -7,6 +7,12 @@
     "clearCart": "Golează coșul",
     "delete": "Șterge",
     "quantity": "Cantitatea",
-    "moveToFavorite": "Mută spre favorite"
+    "moveToFavorite": "Mută spre favorite",
+    "addToCart": "adăugat la coș",
+    "sortBy":"Sortează după",
+    "about" : "Despre noi",
+    "help" : "Ajutor",
+    "consumerPolicy":"Politica de consum",
+    "groupCompanies":"Companii din grup"
 
 }

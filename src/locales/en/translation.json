@@ -7,5 +7,12 @@
     "clearCart": "Clear cart",
     "delete": "Delete",
     "quantity": "Quantity",
-    "moveToFavorite": "Move to favorite"
+    "moveToFavorite": "Move to favorite",
+    "addToCart": "added to cart",
+    "sortBy":"Sort by",
+    "about" : "About",
+    "help" : "Help",
+    "consumerPolicy":"Consumer Policy",
+    "groupCompanies":"Group Companies"
+
 }

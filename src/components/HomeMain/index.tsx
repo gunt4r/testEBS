@@ -8,7 +8,7 @@ import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
 import CardProduct from '../CardProduct';
 interface Product {
-  id: number;
+  id: string;
   title: string;
   price: number;
   category: string;
